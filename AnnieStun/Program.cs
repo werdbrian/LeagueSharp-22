@@ -18,8 +18,7 @@ namespace Drake
         private static void Game_OnGameLoad(EventArgs args)
         {
             player = ObjectManager.Player;
-            annie = ObjectManager.Get<Obj_AI_Hero>().First(champ => champ.IsEnemy&&champ.ChampionName == "Annie");
-            if (annie == null) return;
+            annie = ObjectManager.Get<Obj_AI_Hero>().First(champ => champ.IsEnemy && champ.ChampionName == "Annie");
             Drawing.OnDraw += Drawing_OnDraw;
         }
 
