@@ -25,7 +25,10 @@ namespace Drake
 
         private static void Drawing_OnDraw(EventArgs args)
         {
+            annie = ObjectManager.Get<Obj_AI_Hero>().First(champ => champ.IsEnemy && champ.ChampionName == "Annie");
+            if (annie == null) return;
             if (player.Distance(annie, true) > 2890000 || !annie.IsVisible) return;
+        
             foreach (var buff in annie.Buffs)
             {
                 if (buff.Name == "pyromania")
